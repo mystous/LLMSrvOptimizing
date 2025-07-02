@@ -1,0 +1,29 @@
+INFO 06-29 22:28:07 [__init__.py:243] Automatically detected platform cuda.
+Namespace(backend='vllm', base_url='http://127.0.0.1:8000', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=140, model='deepseek-ai/DeepSeek-R1-Distill-Llama-70B', tokenizer=None, use_beam_search=False, num_prompts=300, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=False, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, append_result=False, metadata=['input_len=512', 'output_len=512', 'serving=vllm'], result_dir='gpu_log', result_filename=None, ignore_eos=False, percentile_metrics='ttft,tpot,itl', metric_percentiles='99', goodput=None, custom_output_len=256, custom_skip_chat_template=False, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=512, random_output_len=512, random_range_ratio=0.0, random_prefix_len=0, hf_subset=None, hf_split=None, hf_output_len=None, top_p=None, top_k=None, min_p=None, temperature=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None)
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 140
+  0%|          | 0/300 [00:00<?, ?it/s]  0%|          | 1/300 [00:00<03:26,  1.45it/s]  1%|          | 2/300 [00:01<03:44,  1.33it/s]  1%|          | 3/300 [00:01<02:29,  1.98it/s]  2%|▏         | 5/300 [00:02<02:07,  2.31it/s]  2%|▏         | 7/300 [00:02<01:22,  3.56it/s]  3%|▎         | 9/300 [00:03<01:18,  3.73it/s]  3%|▎         | 10/300 [00:03<01:36,  3.01it/s]  4%|▎         | 11/300 [00:04<01:37,  2.96it/s]  4%|▍         | 12/300 [00:04<01:38,  2.92it/s]  4%|▍         | 13/300 [00:04<01:51,  2.57it/s]  5%|▍         | 14/300 [00:05<01:35,  2.99it/s]  5%|▌         | 15/300 [00:05<01:50,  2.58it/s]  5%|▌         | 16/300 [00:07<04:28,  1.06it/s]  6%|▌         | 17/300 [00:08<03:55,  1.20it/s]  6%|▌         | 18/300 [00:10<04:53,  1.04s/it]  6%|▋         | 19/300 [00:10<03:56,  1.19it/s]  7%|▋         | 20/300 [00:10<03:00,  1.55it/s]  7%|▋         | 21/300 [00:10<02:17,  2.04it/s]  7%|▋         | 22/300 [00:10<01:44,  2.66it/s]  8%|▊         | 23/300 [00:11<02:43,  1.69it/s]  8%|▊         | 24/300 [00:12<02:05,  2.21it/s] 17%|█▋        | 50/300 [00:12<00:10, 24.25it/s] 29%|██▉       | 88/300 [00:12<00:03, 60.39it/s] 48%|████▊     | 143/300 [00:12<00:01, 108.30it/s] 54%|█████▎    | 161/300 [00:14<00:03, 39.75it/s]  58%|█████▊    | 174/300 [00:16<00:06, 19.11it/s] 61%|██████    | 183/300 [00:20<00:14,  8.25it/s] 63%|██████▎   | 190/300 [00:22<00:14,  7.40it/s] 75%|███████▍  | 224/300 [00:22<00:05, 14.45it/s] 79%|███████▉  | 238/300 [00:22<00:03, 18.12it/s] 84%|████████▍ | 252/300 [00:22<00:02, 23.00it/s] 95%|█████████▌| 285/300 [00:22<00:00, 37.45it/s]100%|██████████| 300/300 [00:23<00:00, 32.04it/s]100%|██████████| 300/300 [00:23<00:00, 12.67it/s]
+============ Serving Benchmark Result ============
+Successful requests:                     300       
+Benchmark duration (s):                  23.67     
+Total input tokens:                      153300    
+Total generated tokens:                  136868    
+Request throughput (req/s):              12.67     
+Output token throughput (tok/s):         5782.04   
+Total Token throughput (tok/s):          12258.26  
+---------------Time to First Token----------------
+Mean TTFT (ms):                          249.17    
+Median TTFT (ms):                        249.52    
+P99 TTFT (ms):                           474.01    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          21.81     
+Median TPOT (ms):                        22.25     
+P99 TPOT (ms):                           27.27     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           21.69     
+Median ITL (ms):                         20.58     
+P99 ITL (ms):                            53.74     
+==================================================

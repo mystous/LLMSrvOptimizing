@@ -1,0 +1,29 @@
+INFO 06-30 04:52:49 [__init__.py:243] Automatically detected platform cuda.
+Namespace(backend='vllm', base_url='http://127.0.0.1:8000', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=130, model='deepseek-ai/DeepSeek-R1-Distill-Llama-70B', tokenizer=None, use_beam_search=False, num_prompts=200, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=False, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, append_result=False, metadata=['input_len=512', 'output_len=512', 'serving=sglang'], result_dir='gpu_log', result_filename=None, ignore_eos=False, percentile_metrics='ttft,tpot,itl', metric_percentiles='99', goodput=None, custom_output_len=256, custom_skip_chat_template=False, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=512, random_output_len=512, random_range_ratio=0.0, random_prefix_len=0, hf_subset=None, hf_split=None, hf_output_len=None, top_p=None, top_k=None, min_p=None, temperature=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None)
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 130
+  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 1/200 [00:01<03:37,  1.09s/it]  1%|          | 2/200 [00:01<02:12,  1.50it/s]  2%|▏         | 3/200 [00:01<01:34,  2.08it/s]  2%|▏         | 4/200 [00:01<01:05,  2.99it/s]  2%|▎         | 5/200 [00:02<01:04,  3.03it/s]  3%|▎         | 6/200 [00:02<00:49,  3.92it/s]  4%|▎         | 7/200 [00:02<00:47,  4.09it/s]  4%|▍         | 9/200 [00:02<00:37,  5.13it/s]  5%|▌         | 10/200 [00:02<00:36,  5.26it/s]  6%|▌         | 12/200 [00:03<00:25,  7.49it/s]  6%|▋         | 13/200 [00:03<00:25,  7.41it/s]  7%|▋         | 14/200 [00:03<00:35,  5.21it/s]  8%|▊         | 15/200 [00:03<00:32,  5.70it/s]  8%|▊         | 17/200 [00:04<00:52,  3.52it/s]  9%|▉         | 18/200 [00:04<00:56,  3.22it/s] 10%|▉         | 19/200 [00:05<00:55,  3.25it/s] 10%|█         | 20/200 [00:06<01:53,  1.59it/s] 10%|█         | 21/200 [00:07<02:04,  1.44it/s] 11%|█         | 22/200 [00:07<01:38,  1.82it/s] 12%|█▏        | 23/200 [00:09<02:27,  1.20it/s] 12%|█▎        | 25/200 [00:09<01:24,  2.07it/s] 14%|█▎        | 27/200 [00:09<00:58,  2.97it/s] 14%|█▍        | 28/200 [00:10<01:06,  2.59it/s] 66%|██████▋   | 133/200 [00:10<00:00, 67.22it/s] 71%|███████   | 142/200 [00:11<00:01, 35.48it/s] 74%|███████▍  | 149/200 [00:12<00:01, 28.88it/s] 77%|███████▋  | 154/200 [00:13<00:02, 18.64it/s] 79%|███████▉  | 158/200 [00:15<00:04,  9.98it/s] 80%|████████  | 161/200 [00:17<00:05,  7.57it/s] 82%|████████▏ | 163/200 [00:17<00:04,  7.93it/s] 82%|████████▎ | 165/200 [00:17<00:04,  7.57it/s] 84%|████████▎ | 167/200 [00:17<00:04,  8.23it/s]100%|██████████| 200/200 [00:17<00:00, 11.35it/s]
+============ Serving Benchmark Result ============
+Successful requests:                     200       
+Benchmark duration (s):                  17.62     
+Total input tokens:                      102200    
+Total generated tokens:                  91780     
+Request throughput (req/s):              11.35     
+Output token throughput (tok/s):         5208.18   
+Total Token throughput (tok/s):          11007.66  
+---------------Time to First Token----------------
+Mean TTFT (ms):                          538.18    
+Median TTFT (ms):                        703.54    
+P99 TTFT (ms):                           812.43    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          17.46     
+Median TPOT (ms):                        18.50     
+P99 TPOT (ms):                           20.22     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           17.34     
+Median ITL (ms):                         16.45     
+P99 ITL (ms):                            46.04     
+==================================================
